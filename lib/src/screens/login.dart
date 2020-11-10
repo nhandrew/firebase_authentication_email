@@ -51,15 +51,19 @@ class _LoginScreenState extends State<LoginScreen> {
               color: Theme.of(context).accentColor,
               child: Text('Signin'),
               onPressed: (){
-                  auth.signInWithEmailAndPassword(email: _email, password: _password);
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+                  auth.signInWithEmailAndPassword(email: _email, password: _password).then((_){
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+                  });
+                  
             }),
             RaisedButton( 
               color: Theme.of(context).accentColor,
               child: Text('Signup'),
               onPressed: (){
-                auth.createUserWithEmailAndPassword(email: _email, password: _password);
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+                auth.createUserWithEmailAndPassword(email: _email, password: _password).then((_){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+                });
+                
               },
             )
           ])
