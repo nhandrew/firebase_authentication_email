@@ -30,8 +30,10 @@ dependencies:
   cupertino_icons: ^1.0.0
   firebase_core: ^0.5.1
   firebase_auth: ^0.18.2
+  fluttertoast: ^7.1.8
 
 dev_dependencies:
+  change_app_package_name: ^0.1.2
   flutter_test:
     sdk: flutter
 
